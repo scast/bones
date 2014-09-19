@@ -1,0 +1,38 @@
+{
+  "name": "Bones",
+  "description": "A Lightweight Wordpress Development Theme",
+  "version": "1.71.0",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "sass",
+    "grid",
+    "php"
+  ],
+  "author": [
+    {
+      "name": "Eddie Machado",
+      "web": "https://github.com/eddiemachado"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/eddiemachado/bones/issues"
+  },
+  "repository": [
+    {
+      "type": "git",
+      "url": "https://github.com/eddiemachado/bones.git"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "WTFPL",
+      "url": "http://www.wtfpl.net/"
+    }
+  ],
+  "homepage": "https://github.com/eddiemachado/bones/",
+  "devDependencies": {
+    "gulp": "~3.8.8",
+    "gulp-sass": "~0.7.3"
+  }
+}
