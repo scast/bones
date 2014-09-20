@@ -33,6 +33,10 @@
   "homepage": "https://github.com/eddiemachado/bones/",
   "devDependencies": {
     "gulp": "~3.8.8",
-    "gulp-sass": "~0.7.3"
+    "gulp-sass": "~0.7.3",
+    "tiny-lr": "~0.1.4",
+    "gulp-notify": "~1.6.0",
+    "gulp-livereload": "~2.1.1",
+    "gulp-minify-css": "~0.3.10"
   }
 }
