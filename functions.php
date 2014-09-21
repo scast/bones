@@ -206,7 +206,7 @@ function bones_fonts() {
   wp_enqueue_style( 'googleFonts');
 }
 
-add_action('wp_print_styles', 'bones_fonts');
+add_action('wp_enqueue_scripts', 'bones_fonts');
 
 
 function bones_livereload() {
