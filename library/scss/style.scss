@@ -26,6 +26,9 @@ the whole project.
 // normalize: http://necolas.github.io/normalize.css/
 @import "../vendor/normalize-scss/normalize";
 
+// stuff that was previously part of normalize but no longer is
+@import "partials/hacks";
+
 // Sass variables
 @import "partials/variables";
 
