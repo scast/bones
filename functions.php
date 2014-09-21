@@ -209,5 +209,16 @@ function bones_fonts() {
 add_action('wp_print_styles', 'bones_fonts');
 
 
+function bones_livereload() {
+    // Load the livereload script only if we are running locally.
+    if (in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'))) {
+        wp_register_script('livereload', 'http://localhost:35729/livereload.js?snipver=1', null, false, true);
+        wp_enqueue_script('livereload');
+    }
+}
+
+
+add_action('wp_enqueue_scripts', 'bones_livereload');
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
