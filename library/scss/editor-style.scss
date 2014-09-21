@@ -17,7 +17,7 @@ here http://codex.wordpress.org/Function_Reference/add_editor_style */
 body#tinymce.wp-editor {
 
 	// normalize: http://necolas.github.io/normalize.css/
-	@import "partials/normalize";
+	@import "../vendor/normalize-scss/normalize";
 
 	// Sass variables
 	@import "partials/variables";
@@ -218,4 +218,3 @@ body#tinymce.wp-editor {
 
 
 }
-

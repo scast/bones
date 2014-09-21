@@ -1,0 +1,30 @@
+{
+  "name": "bones",
+  "version": "1.71.0",
+  "homepage": "https://github.com/eddiemachado/bones",
+  "authors": [
+    "Eddie Machado"
+  ],
+  "description": "A Lightweight Wordpress Development Theme",
+  "main": "index.php",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "sass",
+    "grid",
+    "php"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "library/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "~3.0.1",
+    "modernizr": "~2.8.3"
+  }
+}

@@ -10,6 +10,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var cache = require('gulp-cache');
 var imagemin = require('gulp-imagemin');
+var modulizr = require('gulp-modulizr');
 var server = lr();
 
 gulp.task('styles', function() {
@@ -38,6 +39,62 @@ gulp.task('scripts', function() {
         .pipe(notify("Done building bones script files."));
 });
 
+gulp.task('modernizr', function() {
+    gulp.src(['./library/vendor/modernizr/modernizr.js',
+              './library/vendor/modernizr/feature-detects/css-mediaqueries.js',
+              './library/vendor/modernizr/feature-detects/css-supports.js',
+              './library/vendor/modernizr/feature-detects/css-regions.js'
+             ])
+        .pipe(concat('modernizr.js'))
+        .pipe(modulizr(
+            ['fontface',
+             'backgroundsize',
+             'borderimage',
+             'flexbox',
+             'hsla',
+             'multiplebgs',
+             'opacity',
+             'rgba',
+             'textshadow',
+             'cssanimations',
+             'csscolumns',
+             'generatedcontent',
+             'cssgradients',
+             'cssreflections',
+             'csstransforms',
+             'csstransforms3d',
+             'csstransitions',
+             'applicationcache',
+             'hashchange',
+             'history',
+             'audio',
+             'video',
+             'input',
+             'inputtypes',
+             'localstorage',
+             'websockets',
+             'geolocation',
+             'svg',
+             'svgclippaths',
+             'touch',
+             'webgl',
+             'shiv',
+             'mq',
+             'cssclasses',
+             'addtest',
+             'prefixed',
+             'teststyles',
+             'testprop',
+             'testallprops',
+             'hasevent',
+             'prefixes',
+             'domprefixes']
+
+        ))
+        .pipe(uglify())
+        .pipe(gulp.dest('./library/dist/js/'));
+});
+
 gulp.task('images', function() {
     gulp.src('./library/images/**/*')
         .pipe(cache(imagemin({
@@ -49,6 +106,7 @@ gulp.task('images', function() {
         .pipe(livereload(server));
 });
 
+
 gulp.task('watch', function() {
 
     server.listen(35729, function(err) {
@@ -57,9 +115,11 @@ gulp.task('watch', function() {
         }
         gulp.watch('./library/scss/**/*.scss', ['styles']);
         gulp.watch('./**/*.php', ['livereload-php']);
-        gulp.watch('./library/js/**/*.js', ['scripts']);
+        gulp.watch('./library/js/*.js', ['scripts']);
         gulp.watch('./library/images/**/*', ['images']);
     });
 
 
 });
+
+gulp.task('default', ['styles', 'scripts', 'images', 'modernizr'])
