@@ -24,6 +24,11 @@ over your project's layout.
 
 ******************************************************************/
 
+@import "../../vendor/susy/sass/susy";
+@import "../../vendor/compass-breakpoint/stylesheets/breakpoint";
+
+$susy: (gutters: 0.1);
+
 // using a mixin since we can't use placeholder selectors
 @mixin grid-col {
   float: left;
@@ -31,10 +36,10 @@ over your project's layout.
 
 }
 
-// the last column
-.last-col {
-  float: right;
-  padding-right: 0 !important;
+
+
+#container {
+  @include container;
 }
 
 
@@ -44,210 +49,188 @@ These are the widths for the mobile grid.
 There are four types, but you can add or customize
 them however you see fit.
 */
-@media (max-width: 767px) {
 
+$device-mobile: max-width 767px;
+$device-mobile-layout: 4;
+
+@include susy-breakpoint($device-mobile, $device-mobile-layout) {
   .m-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
+    @include span(4 of 4);
+    @include last;
   }
 
   .m-1of2 {
-    @include grid-col;
-    width: 50%;
+    @include span(1 of 2);
   }
 
   .m-1of3 {
-    @include grid-col;
-    width: 33.33%;
+    @include span(1 of 3);
   }
 
   .m-2of3 {
-    @include grid-col;
-    width: 66.66%;
+    @include span(2 of 3);
   }
 
   .m-1of4 {
-    @include grid-col;
-    width: 25%;
+    @include span(1 of 4);
   }
 
   .m-3of4 {
-    @include grid-col;
-    width: 75%;
+    @include span(3 of 4);
   }
+}
 
-} // end mobile styles
+
+/* } // end mobile styles */
 
 
 /* Portrait tablet to landscape */
-@media (min-width: 768px) and (max-width: 1029px) {
+$device-tablet: 767px 1029px;
+$device-tablet-layout: 5;
+
+@include susy-breakpoint($device-tablet, $device-tablet-layout) {
 
   .t-all {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
+    @include span(5 of 5);
+    @include last;
   }
 
   .t-1of2 {
-    @include grid-col;
-    width: 50%;
+    @include span(1 of 2);
   }
 
   .t-1of3 {
-    @include grid-col;
-    width: 33.33%;
+    @include span(1 of 3);
   }
 
   .t-2of3 {
-    @include grid-col;
-    width: 66.66%;
+    @include span(2 of 3);
   }
 
   .t-1of4 {
-    @include grid-col;
-    width: 25%;
+    @include span(1 of 4);
   }
 
   .t-3of4 {
-    @include grid-col;
-    width: 75%;
+    @include span(3 of 4);
   }
 
   .t-1of5 {
-    @include grid-col;
-    width: 20%;
+    @include span(1 of 5);
   }
 
   .t-2of5 {
-    @include grid-col;
-    width: 40%;
+    @include span(2 of 5);
   }
 
   .t-3of5 {
-    @include grid-col;
-    width: 60%;
+    @include span(3 of 5);
   }
 
   .t-4of5 {
-    @include grid-col;
-    width: 80%;
+    @include span(4 of 5);
   }
 
 } // end tablet
 
 /* Landscape to small desktop */
-@media (min-width: 1030px) {
+$device-desktop: 1030px;
+$device-desktop-layout: 12;
+
+@include susy-breakpoint($device-desktop, $device-desktop-layout) {
 
   .d-all  {
-    @include grid-col;
-    width: 100%;
-    padding-right: 0;
+    @include span(12 of 12);
+    @include last;
   }
 
   .d-1of2 {
-    @include grid-col;
-    width: 50%;
+    @include span(1 of 2);
   }
 
   .d-1of3 {
-    @include grid-col;
-    width: 33.33%;
+    @include span(1 of 3);
   }
 
   .d-2of3 {
-    @include grid-col;
-    width: 66.66%;
+    @include span(2 of 3);
   }
 
   .d-1of4 {
-    @include grid-col;
-    width: 25%;
+    @include span(1 of 4);
   }
 
   .d-3of4 {
-    @include grid-col;
-    width: 75%;
+    @include span(3 of 4);
   }
 
   .d-1of5 {
-    @include grid-col;
-    width: 20%;
+    @include span(1 of 5);
   }
 
   .d-2of5 {
-    @include grid-col;
-    width: 40%;
+    @include span(2 of 5);
   }
 
   .d-3of5 {
-    @include grid-col;
-    width: 60%;
+    @include span(3 of 5);
   }
 
   .d-4of5 {
-    @include grid-col;
-    width: 80%;
+    @include span(4 of 5);
   }
 
   .d-1of6 {
-    @include grid-col;
-    width: 16.6666666667%;
+    @include span(1 of 6);
   }
 
   .d-1of7 {
-    @include grid-col;
-    width: 14.2857142857%;
+    @include span(1 of 7);
   }
 
   .d-2of7 {
-    @include grid-col;
-    width: 28.5714286%;
+    @include span(2 of 7);
   }
 
   .d-3of7 {
-    @include grid-col;
-    width: 42.8571429%;
+    @include span(3 of 7);
   }
 
   .d-4of7 {
-    @include grid-col;
-    width: 57.1428572%;
+    @include span(4 of 7);
   }
 
   .d-5of7 {
-    @include grid-col;
-    width: 71.4285715%;
+    @include span(5 of 7);
   }
 
   .d-6of7 {
-    @include grid-col;
-    width: 85.7142857%;
+    @include span(6 of 7);
   }
 
   .d-1of8 {
-    @include grid-col;
-    width: 12.5%;
+    @include span(1 of 8);
   }
 
   .d-1of9 {
-    @include grid-col;
-    width: 11.1111111111%;
+    @include span(1 of 9);
   }
 
   .d-1of10 {
-    @include grid-col;
-    width: 10%;
+    @include span(1 of 10);
   }
 
   .d-1of11 {
-    @include grid-col;
-    width: 9.09090909091%;
+    @include span(1 of 11);
   }
 
   .d-1of12 {
-    @include grid-col;
-    width: 8.33%;
+    @include span(1 of 12);
   }
 
 } // end desktop styles
+
+// the last column
+.last-col {
+  @include last;
+}
