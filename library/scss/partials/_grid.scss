@@ -32,7 +32,6 @@ $susy: (gutters: 0.1);
   @include container;
 }
 
-
 /*
 Mobile Grid Styles
 These are the widths for the mobile grid.
@@ -70,11 +69,6 @@ them however you see fit.
 
 
 /* } // end mobile styles */
-
-
-/* Portrait tablet to landscape */
-$device-tablet: 767px 1029px;
-$device-tablet-layout: 5;
 
 @include susy-breakpoint($grid-device-tablet, $grid-device-tablet-layout) {
 
@@ -120,10 +114,6 @@ $device-tablet-layout: 5;
   }
 
 } // end tablet
-
-/* Landscape to small desktop */
-$device-desktop: 1030px;
-$device-desktop-layout: 12;
 
 @include susy-breakpoint($grid-device-desktop, $grid-device-desktop-layout) {
 
