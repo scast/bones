@@ -43,6 +43,35 @@ $link-hover:        darken($link-color, 9%);
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
 
+/*********************
+GRID CONFIGURATION
+See partials/_grids.scss
+*********************/
+
+$grid-device-mobile: max-width 767px;
+$grid-device-mobile-layout: 4;
+
+$grid-device-tablet: 767px 1029px;
+$grid-device-tablet-layout: 5;
+
+$grid-device-desktop: 1030px;
+$grid-device-desktop-layout: 12;
+
+/*********************
+DEVICE BREAKPOINTS
+*********************/
+
+// Mobile devices
+$base-mobile: (max-width 480px);
+$larger-mobile: (min-width 481px);
+$tablet-mobile: (min-width 768px);
+
+// Desktops
+$base-desktop: (min-width 1030px);
+$large-desktop: (min-width 1240px);
+
+// Retina
+$retina-breakpoint: (min-resolution 1.5dppx)
 
 /*
 Here's a great tutorial on how to

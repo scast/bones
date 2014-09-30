@@ -9,6 +9,10 @@ be seen on the Desktop.
 
 ******************************************************************/
 
-.wrap {
-  width: 1030px;
+@import "../vendor/compass-breakpoint/stylesheets/breakpoint";
+
+@include breakpoint($base-desktop) {
+  .wrap {
+    width: 1030px;
+  }
 }
