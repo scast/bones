@@ -26,17 +26,7 @@ over your project's layout.
 
 @import "../../vendor/susy/sass/susy";
 @import "../../vendor/compass-breakpoint/stylesheets/breakpoint";
-
 $susy: (gutters: 0.1);
-
-// using a mixin since we can't use placeholder selectors
-@mixin grid-col {
-  float: left;
-  padding-right: 0.75em;
-
-}
-
-
 
 #container {
   @include container;
@@ -50,10 +40,8 @@ There are four types, but you can add or customize
 them however you see fit.
 */
 
-$device-mobile: max-width 767px;
-$device-mobile-layout: 4;
 
-@include susy-breakpoint($device-mobile, $device-mobile-layout) {
+@include susy-breakpoint($grid-device-mobile, $grid-device-mobile-layout) {
   .m-all {
     @include span(4 of 4);
     @include last;
@@ -88,7 +76,7 @@ $device-mobile-layout: 4;
 $device-tablet: 767px 1029px;
 $device-tablet-layout: 5;
 
-@include susy-breakpoint($device-tablet, $device-tablet-layout) {
+@include susy-breakpoint($grid-device-tablet, $grid-device-tablet-layout) {
 
   .t-all {
     @include span(5 of 5);
@@ -137,7 +125,7 @@ $device-tablet-layout: 5;
 $device-desktop: 1030px;
 $device-desktop-layout: 12;
 
-@include susy-breakpoint($device-desktop, $device-desktop-layout) {
+@include susy-breakpoint($grid-device-desktop, $grid-device-desktop-layout) {
 
   .d-all  {
     @include span(12 of 12);
