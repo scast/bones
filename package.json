@@ -43,6 +43,7 @@
     "gulp-concat": "~2.4.1",
     "gulp-imagemin": "~1.0.1",
     "gulp-cache": "~0.2.2",
-    "gulp-modulizr": "0.0.2"
+    "gulp-modulizr": "0.0.2",
+    "gulp-ruby-sass": "~0.7.1"
   }
 }

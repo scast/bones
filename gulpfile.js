@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var lr = require('tiny-lr');
 var notify = require('gulp-notify');
 var livereload = require('gulp-livereload');
